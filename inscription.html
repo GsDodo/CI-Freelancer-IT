@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI Freelancer - Inscription / Connexion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f77f00, #ffffff, #009e60);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+      width: 400px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    form {
+      display: none;
+    }
+
+    form.active {
+      display: block;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background: #009e60;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #007a4a;
+    }
+
+    .switch {
+      margin-top: 15px;
+      color: #f77f00;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #f77f00;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">CI Freelancer</div>
+    <h1 id="formTitle">Inscription</h1>
+
+    <!-- Formulaire Inscription -->
+    <form id="registerForm" class="active">
+      <input type="text" placeholder="Nom complet" required>
+      <input type="email" placeholder="Adresse e-mail" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <select required>
+        <option value="">Je suis...</option>
+        <option value="freelance">Freelance</option>
+        <option value="entreprise">Entreprise</option>
+      </select>
+      <button type="submit">S'inscrire</button>
+    </form>
+
+    <!-- Formulaire Connexion -->
+    <form id="loginForm">
+      <input type="email" placeholder="Adresse e-mail" required>
+      <input type="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form>
+
+    <span id="toggleForm" class="switch">Déjà inscrit ? Se connecter</span>
+  </div>
+
+  <script>
+    const registerForm = document.getElementById('registerForm');
+    const loginForm = document.getElementById('loginForm');
+    const toggleForm = document.getElementById('toggleForm');
+    const formTitle = document.getElementById('formTitle');
+
+    toggleForm.addEventListener('click', () => {
+      registerForm.classList.toggle('active');
+      loginForm.classList.toggle('active');
+
+      if (registerForm.classList.contains('active')) {
+        formTitle.textContent = 'Inscription';
+        toggleForm.textContent = 'Déjà inscrit ? Se connecter';
+      } else {
+        formTitle.textContent = 'Connexion';
+        toggleForm.textContent = 'Pas encore inscrit ? Créer un compte';
+      }
+    });
+  </script>
+</body>
+</html>
