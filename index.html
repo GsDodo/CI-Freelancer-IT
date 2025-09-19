@@ -9,14 +9,17 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #ffffff; /* blanc du drapeau */
+      background-color: #ffffff;
       color: #333;
     }
+
+    /* HEADER */
     header {
-      background: linear-gradient(to right, #f77f00, #ffffff, #009e60); /* orange-blanc-vert */
+      background: linear-gradient(to right, #f77f00, #ffffff, #009e60);
       color: black;
       padding: 1rem 2rem;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
     }
@@ -24,40 +27,56 @@
       margin: 0;
       font-size: 1.8rem;
     }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 5px;
+    }
     nav a {
       color: black;
       text-decoration: none;
-      margin-left: 1rem;
       font-weight: bold;
     }
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* HERO */
     .hero {
       text-align: center;
       padding: 4rem 2rem;
-      background: #f77f00; /* orange */
+      background: #f77f00;
       color: white;
     }
     .hero h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
+
+    /* CONTAINERS */
     .container {
       max-width: 1200px;
       margin: 2rem auto;
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
     .section-title {
       font-size: 1.5rem;
       margin-bottom: 1rem;
-      color: #009e60; /* vert */
+      color: #009e60;
+      text-align: center;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
     }
     .card {
       background: #ffffff;
       border-radius: 10px;
       padding: 1rem;
-      margin-bottom: 1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .card h3 {
@@ -66,6 +85,16 @@
     .card p {
       margin: 0.3rem 0;
     }
+    .availability {
+      font-weight: bold;
+      color: #009e60;
+    }
+    .unavailable {
+      font-weight: bold;
+      color: #009e60;
+    }
+
+    /* FOOTER */
     footer {
       background: linear-gradient(to right, #f77f00, #ffffff, #009e60);
       color: black;
@@ -73,19 +102,32 @@
       padding: 1rem;
       margin-top: 2rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+
+    /* MEDIA QUERIES - RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        justify-content: center;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
-    .availability {
-      font-weight: bold;
-      color: #009e60; /* vert */
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .hero h2 {
+        font-size: 1.2rem;
+      }
     }
-    .unavailable {
-      font-weight: bold;
-      color: #009e60; /* vert */
-   }
   </style>
 </head>
 <body>
@@ -192,11 +234,8 @@
   </footer>
 
   <script>
-    // Mettre automatiquement l'année en cours
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
-
