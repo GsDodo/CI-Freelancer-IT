@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI Freelancer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff; /* blanc du drapeau */
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #f77f00, #ffffff, #009e60); /* orange-blanc-vert */
+      color: black;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #f77f00; /* orange */
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #009e60; /* vert */
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card p {
+      margin: 0.3rem 0;
+    }
+    footer {
+      background: linear-gradient(to right, #f77f00, #ffffff, #009e60);
+      color: black;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .availability {
+      font-weight: bold;
+      color: #009e60; /* vert */
+    }
+    .unavailable {
+      font-weight: bold;
+      color: #009e60; /* vert */
+   }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>CI Freelancer</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Freelances</a>
+      <a href="#">Projets</a>
+      <a href="#">Entreprises</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>La plateforme pour connecter Freelances IT et Entreprises</h2>
+    <p>Trouvez des missions, découvrez des talents et collaborez facilement.</p>
+  </section>
+
+  <!-- FREELANCES -->
+  <section class="container">
+    <h2 class="section-title">Freelances disponibles</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Gouanda OUEI</h3>
+        <p>Consultant RSE & QHSE</p>
+        <p>ISO14001, ISO45001, ISO9001, RSE..</p>
+        <p>TJM : 250 000 FCFA / jour</p>
+        <p class="availability">Disponibilité : Immédiate</p>
+        <p>Mobilité : Hybride: Abidjan / A distance</p>
+      </div>
+      <div class="card">
+        <h3>Gueye DODO</h3>
+        <p>Cloud & Cybersecurity Consultant</p>
+        <p>Azure, ISO27001/5, RGPD..</p>
+        <p>TJM : 300 000 FCFA / jour</p>
+        <p class="availability">Disponibilité : Immédiate</p>
+        <p>Mobilité : Hybride: Abidjan / A distance</p>
+      </div>
+      <div class="card">
+        <h3>Marie Ndiaye</h3>
+        <p>Data Scientist</p>
+        <p>Python, Machine Learning, SQL</p>
+        <p>TJM : 120 000 FCFA / jour</p>
+        <p class="unavailable">Disponibilité : À partir du 1er Octobre</p>
+      </div>
+      <div class="card">
+        <h3>Ali Traoré</h3>
+        <p>Développeur Mobile</p>
+        <p>Flutter, React Native</p>
+        <p>TJM : 90 000 FCFA / jour</p>
+        <p class="availability">Disponibilité : Immédiate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section class="container">
+    <h2 class="section-title">Projets en cours</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Application de gestion RH</h3>
+        <p>Entreprise: TechCorp</p>
+        <p>Stack: React, Node.js, PostgreSQL</p>
+      </div>
+      <div class="card">
+        <h3>Application Web avec MFA</h3>
+        <p>Entreprise: CyberMindset</p>
+        <p>Stack: React, Node.js, PostgreSQL</p>
+      </div>
+      <div class="card">
+        <h3>Analyse de données financières</h3>
+        <p>Entreprise: FinancePro</p>
+        <p>Stack: Python, Pandas, Machine Learning</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTREPRISES -->
+  <section class="container">
+    <h2 class="section-title">Entreprises</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>TechCorp</h3>
+        <p>Startup innovante dans la tech</p>
+      </div>
+      <div class="card">
+        <h3>CyberMindset</h3>
+        <p>Solutions en cybersécurité et cloud</p>
+      </div>
+      <div class="card">
+        <h3>FinancePro</h3>
+        <p>Services financiers et analytics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER DYNAMIQUE -->
+  <footer>
+    <p>&copy; <span id="year"></span> CI Freelancer - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    // Mettre automatiquement l'année en cours
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
