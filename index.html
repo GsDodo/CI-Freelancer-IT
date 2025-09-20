@@ -23,21 +23,36 @@
       justify-content: space-between;
       align-items: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 1.8rem;
     }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-title img {
+      height: 50px;
+      width: auto;
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 5px;
     }
+
     nav a {
       color: black;
       text-decoration: none;
       font-weight: bold;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
@@ -49,6 +64,7 @@
       background: #f77f00;
       color: white;
     }
+
     .hero h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
@@ -60,6 +76,7 @@
       margin: 2rem auto;
       padding: 0 1rem;
     }
+
     .section-title {
       font-size: 1.5rem;
       margin-bottom: 1rem;
@@ -73,22 +90,33 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
     }
+
     .card {
       background: #ffffff;
       border-radius: 10px;
       padding: 1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
     .card h3 {
       margin-top: 0;
     }
+
     .card p {
       margin: 0.3rem 0;
     }
+
     .availability {
       font-weight: bold;
       color: #009e60;
     }
+
     .unavailable {
       font-weight: bold;
       color: #009e60;
@@ -134,7 +162,10 @@
 
   <!-- HEADER -->
   <header>
-    <h1>CI Freelancer</h1>
+    <div class="logo-title">
+      <img src="CIFreelancer.png" alt="CI Freelancer Logo">
+      <h1>CI Freelancer</h1>
+    </div>
     <nav>
       <a href="#">Accueil</a>
       <a href="inscription.html">S'inscrire / Se connecter</a>
@@ -171,7 +202,7 @@
         <p>Mobilité : Hybride: Abidjan / A distance</p>
       </div>
       <div class="card">
-        <h3>Kpangbeu  OULAI</h3>
+        <h3>Kpangbeu OULAI</h3>
         <p>Data Scientist</p>
         <p>Python, Machine Learning, SQL</p>
         <p>TJM : 120 000 FCFA / jour</p>
@@ -239,4 +270,3 @@
 
 </body>
 </html>
-
