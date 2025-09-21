@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - CI Freelancer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background: linear-gradient(to right, #f77f00, #ffffff, #009e60); padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
+    .dashboard { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+    .sidebar { background: #fff; border-right: 1px solid #ddd; padding: 1rem; }
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 1rem; color: #f77f00; }
+    .sidebar a { display: block; margin: 10px 0; text-decoration: none; color: #333; font-weight: bold; }
+    .sidebar a:hover { color: #009e60; }
+    .content { padding: 2rem; }
+    .card { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .card h3 { margin-top: 0; color: #009e60; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    table th, table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+    table th { background: #f77f00; color: white; }
+    button { background:#f77f00; color:white; padding:8px 12px; border:none; border-radius:5px; cursor:pointer; }
+    button:hover { background:#009e60; }
+    @media (max-width: 768px) { .dashboard { grid-template-columns: 1fr; } .sidebar { border-right: none; border-bottom: 1px solid #ddd; } }
+  </style>
+</head>
+<body>
+  <header>CI Freelancer - Administration</header>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Navigation</h2>
+      <a href="#">📊 Tableau de bord</a>
+      <a href="#">👨‍💻 Freelances</a>
+      <a href="#">🏢 Clients</a>
+      <a href="#">📂 Projets</a>
+      <a href="#">⚙️ Paramètres</a>
+      <a href="auth.html">🚪 Déconnexion</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Vue globale -->
+      <div class="card">
+        <h3>Statistiques générales</h3>
+        <p>👨‍💻 Freelances inscrits : <strong>150</strong></p>
+        <p>🏢 Clients inscrits : <strong>85</strong></p>
+        <p>📂 Projets publiés : <strong>47</strong></p>
+      </div>
+
+      <!-- Gestion des freelances -->
+      <div class="card">
+        <h3>Gestion des freelances</h3>
+        <table>
+          <tr>
+            <th>Nom</th>
+            <th>Spécialité</th>
+            <th>Statut</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>Marie Ndiaye</td>
+            <td>Data Scientist</td>
+            <td>✅ Validé</td>
+            <td><button>Supprimer</button></td>
+          </tr>
+          <tr>
+            <td>Ali Traoré</td>
+            <td>Dév. Mobile</td>
+            <td>⏳ En attente</td>
+            <td><button>Valider</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Gestion des clients -->
+      <div class="card">
+        <h3>Gestion des clients</h3>
+        <table>
+          <tr>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>TechCorp</td>
+            <td>Entreprise</td>
+            <td>contact@techcorp.com</td>
+            <td><button>Supprimer</button></td>
+          </tr>
+          <tr>
+            <td>Koffi Jean</td>
+            <td>Particulier</td>
+            <td>jeankoffi@mail.com</td>
+            <td><button>Supprimer</button></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Gestion des projets -->
+      <div class="card">
+        <h3>Gestion des projets</h3>
+        <table>
+          <tr>
+            <th>Titre</th>
+            <th>Client</th>
+            <th>Statut</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>Application RH</td>
+            <td>TechCorp</td>
+            <td>✅ Actif</td>
+            <td><button>Archiver</button></td>
+          </tr>
+          <tr>
+            <td>Analyse financière</td>
+            <td>Koffi Jean</td>
+            <td>⏳ En cours</td>
+            <td><button>Archiver</button></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

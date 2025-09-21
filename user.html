@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord - CI Freelancer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background: linear-gradient(to right, #f77f00, #ffffff, #009e60); padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
+    .dashboard { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+    .sidebar { background: #fff; border-right: 1px solid #ddd; padding: 1rem; }
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 1rem; color: #f77f00; }
+    .sidebar a { display: block; margin: 10px 0; text-decoration: none; color: #333; font-weight: bold; }
+    .sidebar a:hover { color: #009e60; }
+    .content { padding: 2rem; }
+    .card { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .card h3 { margin-top: 0; color: #009e60; }
+    .profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
+    @media (max-width: 768px) { .dashboard { grid-template-columns: 1fr; } .sidebar { border-right: none; border-bottom: 1px solid #ddd; } }
+  </style>
+</head>
+<body>
+  <header>CI Freelancer - Tableau de bord Freelance</header>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Navigation</h2>
+      <a href="#">Mon Profil</a>
+      <a href="#">Projets disponibles</a>
+      <a href="#">Mes Candidatures</a>
+      <a href="#">Missions en cours</a>
+      <a href="#">Paramètres</a>
+      <a href="auth.html">Déconnexion</a>
+    </aside>
+    <main class="content">
+      <!-- Profil avec photo -->
+      <div class="card">
+        <h3>Mon Profil</h3>
+        <img src="https://via.placeholder.com/120" alt="Photo de profil" class="profile-pic" id="profileImage">
+        <input type="file" accept="image/*" onchange="previewImage(event)">
+        <p><strong>Nom :</strong> Gouanda OUEI</p>
+        <p><strong>Spécialité :</strong> Consultant RSE & QHSE</p>
+        <p><strong>TJM :</strong> 250 000 FCFA / jour</p>
+        <p><strong>Disponibilité :</strong> Immédiate</p>
+        <p><strong>Mobilité :</strong> Hybride (Abidjan / À distance)</p>
+      </div>
+      <!-- Projets -->
+      <div class="card">
+        <h3>Projets disponibles</h3>
+        <ul>
+          <li><strong>Application RH</strong> - React, Node.js (TechCorp)</li>
+          <li><strong>Application Web sécurisée</strong> - MFA, PostgreSQL (CyberMindset)</li>
+          <li><strong>Analyse de données financières</strong> - Python, Machine Learning (FinancePro)</li>
+        </ul>
+        <button style="background:#f77f00; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer;">
+          Postuler à un projet
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        document.getElementById('profileImage').src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>

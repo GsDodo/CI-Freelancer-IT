@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord - Entreprise | CI Freelancer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background: linear-gradient(to right, #f77f00, #ffffff, #009e60); padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
+    .dashboard { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+    .sidebar { background: #fff; border-right: 1px solid #ddd; padding: 1rem; }
+    .sidebar h2 { font-size: 1.2rem; margin-bottom: 1rem; color: #f77f00; }
+    .sidebar a { display: block; margin: 10px 0; text-decoration: none; color: #333; font-weight: bold; }
+    .sidebar a:hover { color: #009e60; }
+    .content { padding: 2rem; }
+    .card { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .card h3 { margin-top: 0; color: #009e60; }
+    input, textarea, select { width: 100%; padding: 10px; margin: 0.5rem 0; border: 1px solid #ddd; border-radius: 8px; }
+    button { background:#f77f00; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer; margin-top: 5px; }
+    button:hover { background:#009e60; }
+    @media (max-width: 768px) { 
+      .dashboard { grid-template-columns: 1fr; } 
+      .sidebar { border-right: none; border-bottom: 1px solid #ddd; } 
+    }
+  </style>
+</head>
+<body>
+  <header>CI Freelancer - Tableau de bord Entreprise & Particulier</header>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Navigation</h2>
+      <a href="#">Mes Projets</a>
+      <a href="#">Publier un projet</a>
+      <a href="#">Candidatures reçues</a>
+      <a href="#">Freelances favoris</a>
+      <a href="auth.html">Déconnexion</a>
+    </aside>
+
+    <main class="content">
+      <!-- Publier un projet -->
+      <div class="card">
+        <h3>Publier un projet</h3>
+        <form>
+          <input type="text" placeholder="Titre du projet" required>
+          <textarea placeholder="Description du projet" rows="4" required></textarea>
+          <input type="text" placeholder="Compétences requises (ex: React, Python)" required>
+          <select>
+            <option value="">Durée estimée</option>
+            <option>1-3 mois</option>
+            <option>3-6 mois</option>
+            <option>6-12 mois</option>
+          </select>
+          <input type="number" placeholder="Budget estimé (FCFA)" required>
+          <button type="submit">Publier</button>
+        </form>
+      </div>
+
+      <!-- Projets déjà publiés -->
+      <div class="card">
+        <h3>Mes projets publiés</h3>
+        <ul>
+          <li><strong>Application RH</strong> - 5 candidatures reçues</li>
+          <li><strong>Application Web sécurisée</strong> - 3 candidatures reçues</li>
+          <li><strong>Analyse financière</strong> - 7 candidatures reçues</li>
+        </ul>
+      </div>
+
+      <!-- Candidatures reçues -->
+      <div class="card">
+        <h3>Candidatures reçues</h3>
+        <ul>
+          <li><strong>Gouanda OUEI</strong> - Consultant RSE & QHSE - <button>Voir profil</button></li>
+          <li><strong>Marie Ndiaye</strong> - Data Scientist - <button>Voir profil</button></li>
+          <li><strong>Ali Traoré</strong> - Développeur Mobile - <button>Voir profil</button></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
